@@ -1,0 +1,25 @@
+class Solution(object):
+    def mergeTwoLists(self, l1, l2):
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        """
+        s = t = ListNode(0)
+        if (l1 == None and l2 == None):
+            t.next = None
+        elif (l1 == None):
+            t.next = l2
+        elif (l2 == None):
+            t.next = l1
+        else:
+            while not (l1 is None or l2 is None):
+                if l1.val < l2.val:
+                    t.next = l1
+                    l1 = l1.next
+                else:
+                    t.next = l2
+                    l2 = l2.next
+                t = t.next
+            t.next = l1 or l2
+        return s.next
