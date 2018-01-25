@@ -1,0 +1,21 @@
+class Solution(object):
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        '''
+        s-2 is valid -> for s to be valid, 
+        
+        '''
+        if len(s) % 2 != 0:
+            return False
+        d = {')': '(', '}': '{', ']': '['}
+        stack = []
+        for c in s:
+            if c in d:
+                if not stack or stack.pop() != d[c]:
+                    return False
+            else:
+                stack.append(c)
+        return not stack
