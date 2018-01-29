@@ -1,0 +1,29 @@
+############################################
+My method：
+class Solution:
+    def searchInsert(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        if nums[len(nums)-1]>=target:
+            for i in range(len(nums)):
+                if nums[i]<target:
+                    continue
+                return i
+        return len(nums)
+        
+###########################################
+Other solution:
+class Solution:
+    def searchInsert(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        for i in range(len(nums)):
+            if nums[i] >= target:
+                return i
+        return i+1
