@@ -1,0 +1,18 @@
+####################################
+Simple solution:
+class Solution:
+    def maxSubArray(self, nums):
+        max_sub,fn = nums[0],0
+        for i in nums:
+            fn = max(i,fn+i)
+            max_sub = max(max_sub,fn)
+        return max_sub
+
+class Solution:
+    def maxSubArray(self, nums):
+        largest = max(nums)
+        summax = nums[0]
+        for item in nums[1:]:
+            summax = max(item, summax + item)
+            largest = max(largest, summax)
+        return largest
