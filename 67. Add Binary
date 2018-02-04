@@ -1,0 +1,21 @@
+##################################
+Simple solution：
+class Solution:
+    def addBinary(self, a, b):
+        """
+        :type a: str
+        :type b: str
+        :rtype: str
+        """
+        return bin(eval('0b' + a) + eval('0b' + b))[2:]
+
+eval（）
+eval(expression, globals=None, locals=None)
+官方文档中的解释是，将字符串str当成有效的表达式来求值并返回计算结果。globals和locals参数是可选的。
+如果提供了globals参数，那么它必须是dictionary类型；如果提供了locals参数，那么它可以是任意的map对象。
+Example:
+a=1
+g={'a':20}
+eval("a+1",g)
+
+返回21
