@@ -1,0 +1,21 @@
+######################################
+My method:
+class Solution:
+    def climbStairs(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        fib=[1,1]
+        for i in range(n):
+            fib.append(fib[-2]+fib[-1])
+        return fib[-2]
+        
+########################################
+Another:
+        a = b = 1
+        for _ in range(n):
+            a, b = b, a + b
+        return a
+        
+This is Fibonacci number.      
