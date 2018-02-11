@@ -1,0 +1,14 @@
+########################################
+My solution：
+class Solution:
+    def numRabbits(self, answers):
+        """
+        :type answers: List[int]
+        :rtype: int
+        """
+        answers.sort()
+        i,s=0,0
+        while i<len(answers):
+            s=s+(answers[i]+1)*math.ceil(answers.count(answers[i])/(answers[i]+1))
+            i=i+answers.count(answers[i])
+        return (s)
