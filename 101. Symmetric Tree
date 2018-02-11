@@ -1,0 +1,29 @@
+#######################################################
+Recursive solution:
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    def isSymmetric(self, root):
+        """
+        :type root: TreeNode
+        :rtype: bool
+        """
+        def im(Node1,Node2):
+            if Node1 == None and Node2==None: 
+                return True
+            elif Node1 == None or Node2==None: 
+                return False
+            elif Node1.val!=Node2.val: 
+                return False
+            elif Node1.val==Node2.val:
+                return (im(Node1.left,Node2.right) and im(Node1.right,Node2.left))
+        if root==None: 
+            return True
+        else: 
+            return im(root.left,root.right)
